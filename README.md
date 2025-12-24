@@ -39,7 +39,7 @@ Este projeto está sendo construído sobre a estrutura desenvolvida pelo time ab
 
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/starfit-galaxy.git
+git clone https://github.com/seu-usuario/StarFit.git
 ```
 
 2. Abra o arquivo `index.html` em seu navegador preferido.
