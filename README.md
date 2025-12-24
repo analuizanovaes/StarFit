@@ -58,4 +58,3 @@ Aproveite a viagem espacial! 🌠
 <div align="center">
   <sub>Desenvolvido com 💜 e poeira estelar.</sub>
 </div>
- pelo link real do seu repositório.
