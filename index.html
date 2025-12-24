@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starfit - Academia Premium</title>
+    
+    <!-- Ícones Lucide (Leve e Rápido) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fontes: Oswald (Títulos) e Inter (Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <i data-lucide="star"></i> <span>STAR</span>FIT
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#modalidades">Diferenciais</a></li>
+                <li><a href="#planos">Planos</a></li>
+            </ul>
+        </nav>
+        <button class="btn-login" onclick="openLogin()">Área do Aluno</button>
+    </header>
+
+    <!-- Área Principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="star-bg-effect"></div>
+            
+            <!-- Estrela SVG de fundo -->
+            <svg class="hero-star-svg" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+
+            <!-- Coluna 1: Texto -->
+            <div class="hero-text-content">
+                <div class="badge">
+                    <i data-lucide="zap" size="14"></i> Estrutura Premium
+                </div>
+
+                <h1>TREINE COMO <br>UMA <span>ESTRELA</span></h1>
+                <p>A melhor academia da galáxia. Equipamentos de ponta e ambiente exclusivo para você alcançar resultados de outro mundo.</p>
+            
+                <div style="display: flex; gap: 15px; margin-top: 10px; flex-wrap: wrap;">
+                   <button onclick="document.getElementById('planos').scrollIntoView()" style="background:var(--premium-yellow); color:black; border:none; padding:12px 30px; border-radius:50px; cursor:pointer; font-weight:700; font-family:var(--font-body); box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);">COMEÇAR AGORA</button>
+                   <button onclick="document.getElementById('modalidades').scrollIntoView()" style="background:transparent; border:1px solid #555; color:white; padding:12px 30px; border-radius:50px; cursor:pointer; font-weight:600; font-family:var(--font-body);">Saber Mais</button>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Imagem -->
+            <div class="hero-image-container">
+                <!-- Imagem leve de academia (Unsplash) -->
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop" alt="Atleta Starfit" class="hero-image">
+                
+                <!-- Card flutuante sobre a imagem -->
+                <div class="stat-badge">
+                    <i data-lucide="flame" size="24"></i>
+                    <div>
+                        <div style="font-size: 0.75rem; color: #a1a1aa; font-weight: 700; text-transform: uppercase;">Queima Diária</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: white;">850+ kcal</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Por que a Starfit (Nova) -->
+        <section id="modalidades" class="why-section">
+            <div class="section-header">
+                <h2>POR QUE A <span style="color: var(--premium-yellow);">STARFIT?</span></h2>
+                <p style="color: var(--text-muted);">Não é apenas uma academia, é o seu novo estilo de vida.</p>
+            </div>
+
+            <div class="why-grid">
+                <!-- Item 1 -->
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="dumbbell" size="24"></i>
+                    </div>
+                    <h3>Equipamentos de Elite</h3>
+                    <p>Maquinário importado de última geração biomecânica para garantir a segurança e eficiência do seu treino.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="users" size="24"></i>
+                    </div>
+                    <h3>Profissionais Expert</h3>
+                    <p>Nosso time é composto por especialistas prontos para montar o treino perfeito para o seu objetivo.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="feature-box">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="fan" size="24"></i>
+                    </div>
+                    <h3>Ambiente Climatizado</h3>
+                    <p>Ar condicionado em toda a unidade, vestiários luxuosos e área VIP para relaxar pós-treino.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Planos -->
+        <section class="plans-section" id="planos">
+            <div class="section-header">
+                <h2>ESCOLHA SEU PLANO</h2>
+            </div>
+
+            <div class="plans-container">
+                
+                <!-- PLANO NORMAL (Roxo) -->
+                <div class="card normal">
+                    <div>
+                        <h2>NORMAL</h2>
+                        <div class="price">59<span>,90</span></div>
+                        <ul class="features">
+                            <li><i data-lucide="check" size="18" color="#9333ea"></i> Acesso à musculação</li>
+                            <li><i data-lucide="check" size="18" color="#9333ea"></i> Sem taxa de adesão</li>
+                            <li><i data-lucide="check" size="18" color="#9333ea"></i> Horário livre</li>
+                            <li style="color: #52525b; text-decoration: line-through;"><i data-lucide="x" size="18"></i> Acesso outras unidades</li>
+                        </ul>
+                    </div>
+                    <button class="btn-normal" onclick="openRegister('normal')">Assinar Normal</button>
+                </div>
+
+                <!-- PLANO PREMIUM (Amarelo) -->
+                <div class="card premium">
+                    <div class="popular-tag">MAIS ESCOLHIDO</div>
+                    
+                    <div>
+                        <h2>PREMIUM</h2>
+                        <div class="price">99<span>,90</span></div>
+                        <ul class="features">
+                            <li><i data-lucide="star" size="18" fill="#eab308" color="#eab308"></i> <strong>Acesso ILIMITADO</strong></li>
+                            <li><i data-lucide="check" size="18" color="#eab308"></i> Levar amigos (5x/mês)</li>
+                            <li><i data-lucide="check" size="18" color="#eab308"></i> Cadeira de massagem</li>
+                            <li><i data-lucide="check" size="18" color="#eab308"></i> Todas as unidades Starfit</li>
+                        </ul>
+                    </div>
+                    <button class="btn-premium" onclick="openRegister('premium')">Ser Premium</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Login/Cadastro -->
+    <div class="auth-overlay" id="authModal">
+        <div class="auth-box">
+            <button class="close-btn" onclick="closeModal()"><i data-lucide="x"></i></button>
+            
+            <h2 class="form-title" id="modalTitle">Login</h2>
+            
+            <form onsubmit="event.preventDefault(); alert('Ação realizada com sucesso!'); closeModal();">
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="exemplo@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" id="modalActionBtn" class="btn-premium" style="margin-top: 10px;">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="credits-title">Equipe Starfit - Desenvolvedores</div>
+        
+        <div class="team-grid">
+            <div class="team-member">Ana Luiza Fernandes (Front-end)</div>
+            <div class="team-member">Calebe Ferreira (Back-end)</div>
+            <div class="team-member">Rayane Sousa (UI/UX)</div>
+            <div class="team-member">Vitor Sousa (Banco de Dados)</div>
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><i data-lucide="instagram"></i></a>
+            <a href="#"><i data-lucide="facebook"></i></a>
+            <a href="#"><i data-lucide="twitter"></i></a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2024 Starfit Academy. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
