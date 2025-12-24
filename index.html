@@ -16,7 +16,7 @@
 
 </head>
 <body>
-
+    <div id="stars-container" class="stars-bg"></div>
     <!-- Cabeçalho -->
     <header>
         <div class="logo">
@@ -61,7 +61,7 @@
             <!-- Coluna 2: Imagem -->
             <div class="hero-image-container">
                 <!-- Imagem leve de academia (Unsplash) -->
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop" alt="Atleta Starfit" class="hero-image">
+                <img src="imagens/anastase-maragos-7kEpUPB8vNk-unsplash.jpg" alt="Atleta Starfit" class="hero-image">
                 
                 <!-- Card flutuante sobre a imagem -->
                 <div class="stat-badge">
@@ -74,7 +74,7 @@
             </div>
         </section>
 
-        <!-- Seção: Por que a Starfit (Nova) -->
+        <!-- Seção: Por que a Starfit -->
         <section id="modalidades" class="why-section">
             <div class="section-header">
                 <h2>POR QUE A <span style="color: var(--premium-yellow);">STARFIT?</span></h2>
@@ -113,40 +113,57 @@
         <section class="plans-section" id="planos">
             <div class="section-header">
                 <h2>ESCOLHA SEU PLANO</h2>
+                <p><strong>Sua melhor versão te espera!</strong></p>
             </div>
 
-            <div class="plans-container">
+            <!-- Wrapper que segura os Planos e a Imagem lado a lado -->
+            <div class="plans-wrapper">
                 
-                <!-- PLANO NORMAL (Roxo) -->
-                <div class="card normal">
-                    <div>
-                        <h2>NORMAL</h2>
-                        <div class="price">59<span>,90</span></div>
-                        <ul class="features">
-                            <li><i data-lucide="check" size="18" color="#9333ea"></i> Acesso à musculação</li>
-                            <li><i data-lucide="check" size="18" color="#9333ea"></i> Sem taxa de adesão</li>
-                            <li><i data-lucide="check" size="18" color="#9333ea"></i> Horário livre</li>
-                            <li style="color: #52525b; text-decoration: line-through;"><i data-lucide="x" size="18"></i> Acesso outras unidades</li>
-                        </ul>
+                <!-- Coluna da Esquerda: Os cartões dos planos -->
+                <div class="plans-list">
+                    
+                    <!-- PLANO NORMAL -->
+                    <div class="card normal">
+                        <div>
+                            <h2>NORMAL</h2>
+                            <div class="price">89<span>,90</span></div>
+                            <ul class="features">
+                                <li><i data-lucide="check" size="18" color="#9333ea"></i> Acesso à musculação</li>
+                                <li><i data-lucide="check" size="18" color="#9333ea"></i> Sem taxa de adesão</li>
+                                <li><i data-lucide="check" size="18" color="#9333ea"></i> Horário livre</li>
+                                <li style="color: #52525b; text-decoration: line-through;"><i data-lucide="x" size="18"></i> Acesso outras unidades</li>
+                            </ul>
+                        </div>
+                        <button class="btn-normal" onclick="openRegister('normal')">Assinar Normal</button>
                     </div>
-                    <button class="btn-normal" onclick="openRegister('normal')">Assinar Normal</button>
+
+                    <!-- PLANO PREMIUM -->
+                    <div class="card premium">
+                        <div class="popular-tag">MAIS ESCOLHIDO</div>
+                        
+                        <div>
+                            <h2>PREMIUM</h2>
+                            <div class="price">119<span>,90</span></div>
+                            <ul class="features">
+                                <li><i data-lucide="star" size="18" fill="#eab308" color="#eab308"></i> <strong>Acesso ILIMITADO</strong></li>
+                                <li><i data-lucide="check" size="18" color="#eab308"></i> Levar amigos (5x/mês)</li>
+                                <li><i data-lucide="check" size="18" color="#eab308"></i> Cadeira de massagem</li>
+                                <li><i data-lucide="check" size="18" color="#eab308"></i> Todas as unidades Starfit</li>
+                            </ul>
+                        </div>
+                        <button class="btn-premium" onclick="openRegister('premium')">Ser Premium</button>
+                    </div>
                 </div>
 
-                <!-- PLANO PREMIUM (Amarelo) -->
-                <div class="card premium">
-                    <div class="popular-tag">MAIS ESCOLHIDO</div>
+                <!-- Coluna da Direita: A imagem da sua amiga -->
+                <div class="ia-highlight">
+                    <!-- IMPORTANTE: Coloque o nome do arquivo da imagem aqui embaixo -->
+                    <img src="imagens/ChatGPT_Image_6_de_out._de_2025__11_57_56-removebg-preview 1.png" alt="Conceito Starfit IA" class="ia-img">
                     
-                    <div>
-                        <h2>PREMIUM</h2>
-                        <div class="price">99<span>,90</span></div>
-                        <ul class="features">
-                            <li><i data-lucide="star" size="18" fill="#eab308" color="#eab308"></i> <strong>Acesso ILIMITADO</strong></li>
-                            <li><i data-lucide="check" size="18" color="#eab308"></i> Levar amigos (5x/mês)</li>
-                            <li><i data-lucide="check" size="18" color="#eab308"></i> Cadeira de massagem</li>
-                            <li><i data-lucide="check" size="18" color="#eab308"></i> Todas as unidades Starfit</li>
-                        </ul>
+                    <div class="ia-caption">
+                        <strong>Starfit Vision</strong><br>
+                        Tecnologia de ponta em cada detalhe.
                     </div>
-                    <button class="btn-premium" onclick="openRegister('premium')">Ser Premium</button>
                 </div>
 
             </div>
@@ -177,23 +194,63 @@
 
     <!-- Rodapé -->
     <footer>
-        <div class="credits-title">Equipe Starfit - Desenvolvedores</div>
-        
-        <div class="team-grid">
-            <div class="team-member">Ana Luiza Fernandes (Front-end)</div>
-            <div class="team-member">Calebe Ferreira (Back-end)</div>
-            <div class="team-member">Rayane Sousa (UI/UX)</div>
-            <div class="team-member">Vitor Sousa (Banco de Dados)</div>
+        <div class="footer-content">
+            <div class="credits-title">Nossa equipe de desenvolvimento</div>
+            
+            <div class="team-grid">
+                
+                <!-- Ana Luiza -->
+                <a href="https://github.com/analuizanovaes" target="_blank" class="team-card">
+                    <div class="team-avatar"><i data-lucide="layout"></i></div>
+                    <div class="team-info">
+                        <span class="team-name">Ana Luiza</span>
+                        <span class="team-role">Front-end</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" size="16" style="margin-left: auto; color: #52525b;"></i>
+                </a>
+
+                <!-- Vitor Sousa -->
+                <a href="https://github.com/vitorguinomio" target="_blank" class="team-card">
+                    <div class="team-avatar"><i data-lucide="database"></i></div>
+                    <div class="team-info">
+                        <span class="team-name">Vitor Sousa</span>
+                        <span class="team-role">Banco de Dados</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" size="16" style="margin-left: auto; color: #52525b;"></i>
+                </a>
+
+                <!-- Rayane Sousa -->
+                <a href="https://github.com/raysousa-prog" target="_blank" class="team-card">
+                    <div class="team-avatar"><i data-lucide="palette"></i></div>
+                    <div class="team-info">
+                        <span class="team-name">Rayane Sousa</span>
+                        <span class="team-role">UI/UX Design</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" size="16" style="margin-left: auto; color: #52525b;"></i>
+                </a>
+
+                <!-- Calebe Ferreira -->
+                <a href="https://github.com/SpellmanKing" target="_blank" class="team-card">
+                    <div class="team-avatar"><i data-lucide="server"></i></div>
+                    <div class="team-info">
+                        <span class="team-name">Calebe Ferreira</span>
+                        <span class="team-role">Back-end</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" size="16" style="margin-left: auto; color: #52525b;"></i>
+                </a>
+
+            </div>
         </div>
 
-        <div class="social-icons">
-            <a href="#"><i data-lucide="instagram"></i></a>
-            <a href="#"><i data-lucide="facebook"></i></a>
-            <a href="#"><i data-lucide="twitter"></i></a>
-        </div>
-
-        <div class="copyright">
-            &copy; 2024 Starfit Academy. Todos os direitos reservados.
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2024 Starfit Gym. Todos os direitos reservados.
+            </div>
+            <div class="social-icons">
+                <a href="#"><i data-lucide="instagram" size="20"></i></a>
+                <a href="#"><i data-lucide="facebook" size="20"></i></a>
+                <a href="#"><i data-lucide="twitter" size="20"></i></a>
+            </div>
         </div>
     </footer>
 

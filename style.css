@@ -89,7 +89,7 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 60px;
 }
 
 nav a {
@@ -157,6 +157,33 @@ nav a:hover::after {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Fundo Fixo */
+.stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Importante: joga para trás de tudo */
+    pointer-events: none; /* Importante: deixa clicar no que está por baixo */
+}
+
+/* O pontinho da estrela */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite linear;
+    opacity: 0;
+}
+
+/* Animação */
+@keyframes twinkle {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: var(--opacity); transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.5); }
 }
 
 /* Fundo da Estrela (Ambiental) */
@@ -328,8 +355,92 @@ nav a:hover::after {
 }
 
 /* ================= PLANOS ================= */
+
+/* Wrapper que segura tudo */
+.plans-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Agrupamento dos planos */
+.plans-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Container da Imagem da IA (Fundo Preto) */
+.ia-highlight {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #333;
+    background: #000; /* Fundo preto solicitado */
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    
+    /* FORÇA A IMAGEM A IR PARA O COMEÇO (ESQUERDA) */
+    order: -1;
+}
+
+/* Efeito de brilho na imagem */
+.ia-highlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+    pointer-events: none;
+}
+
+.ia-img {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.8; /* Leve transparência para fundir com o preto */
+    transition: opacity 0.5s;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.ia-highlight:hover .ia-img { 
+    opacity: 1; 
+}
+
+.ia-highlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+.ia-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(24, 24, 27, 0.9); /* Fundo um pouco mais sólido */
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--premium-yellow);
+    font-size: 0.8rem;
+    color: #ddd;
+    backdrop-filter: blur(4px);
+}
+
 .plans-section {
     padding: 80px 5%;
+}
+
+.plans-section p {
+    color: var(--premium-yellow);
 }
 
 .section-header {
@@ -603,6 +714,21 @@ footer {
     color: white;
 }
 
+.team-card {
+    /* Removemos o fundo e a borda para ficar limpo */
+    background: transparent; 
+    border: none;
+    padding: 15px 0; /* Ajuste o espaçamento */
+    
+    /* Mantém o resto */
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #333; /* Opcional: linha fina entre eles */
+}
+
 .social-icons {
     margin-top: 30px;
     display: flex;
@@ -628,6 +754,21 @@ footer {
 
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 900px) {
+    .plans-wrapper { 
+        flex-direction: column; 
+    }
+
+    .ia-highlight { 
+        max-width: 100%; 
+        height: 250px; 
+    }
+
+    .ia-img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+    }
+
     .hero {
         grid-template-columns: 1fr;
         /* Volta para 1 coluna no celular */
