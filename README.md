@@ -1,60 +1,78 @@
-# 🚀 STARFIT - Galaxy Edition
+# 🚀 STARFIT
 
 *"Treine como uma estrela. Transforme sua energia em força gravitacional."*
 
 ## 🌌 Sobre o Projeto
 
-Este repositório contém uma versão personalizada da landing page da **Starfit**, uma academia fictícia conceito com temática premium e espacial.
+Este repositório contém a versão **2.0 (Galaxy Edition)** da landing page da **Starfit**. O projeto evoluiu de uma página estática para uma aplicação web interativa, focada na experiência do usuário (UX), animações fluidas e validação de dados em tempo real.
 
-Esta versão foca na **imersão visual**, adicionando animações sutis e refinamentos de copy para elevar a experiência do usuário, mantendo a estrutura sólida e o design system original desenvolvido pela equipe.
+A interface adapta-se dinamicamente entre **Light Mode** (Energético/Amarelo) e **Dark Mode** (Imersivo/Espacial), oferecendo uma experiência visual única em cada tema.
 
-## ✨ Diferenciais desta Versão
+## ✨ Novas Funcionalidades & Diferenciais
 
-- **Fundo Estrelado Animado**: Script leve em JavaScript que gera um campo estelar cintilante sobre o fundo dark.
-- **Design System Preservado**: Manutenção da paleta de cores (Zinc + Gold/Purple) e tipografia originais.
+### 🎨 UI/UX e Design
+- **Dual Theme Engine**: 
+  - *Light Mode*: Header amarelo vibrante com contrastes em roxo/azul.
+  - *Dark Mode*: Fundo espacial com partículas de estrelas geradas via JavaScript e nebulosa SVG atrás dos títulos.
+- **Animações Avançadas**:
+  - **Hero 3D Tilt**: Efeito de perspectiva 3D na imagem principal ao mover o mouse.
+  - **Levitação**: Halteres flutuantes na seção "Descobrir".
+  - **Scroll Reveal**: Elementos surgem suavemente na tela conforme a rolagem.
+  - **Interactive Hover**: Efeitos de zoom e brilho nos cards de planos.
+
+### 🔐 Autenticação e Formulários Inteligentes
+- **Modal Split-Screen**: Design moderno dividido (Imagem lateral + Formulário).
+- **Lógica de Login/Cadastro**: O mesmo modal alterna dinamicamente entre campos de Login (simplificado) e Cadastro (completo) via DOM Manipulation.
+- **Validações de Segurança (Client-side)**:
+  - **Senha Forte**: Regex que exige 8 caracteres, maiúscula, número e símbolo.
+  - **Idade Real**: Algoritmo que impede datas futuras ou idades superiores a 120 anos.
+  - **Máscara de Input**: Formatação automática de telefone `(XX) XXXXX-XXXX` enquanto o usuário digita.
+- **Feedback Visual**: Uso da biblioteca **SweetAlert2** para alertas de sucesso ou erro elegantes e animados.
+- **Show/Hide Password**: Funcionalidade de "olhinho" interativo para revelar a senha.
+
+### 📱 Responsividade
+- Menu de navegação adaptável.
+- Modais e grids que se ajustam perfeitamente a dispositivos móveis.
+- Otimização de imagens e layouts flexíveis.
 
 ## 🛠️ Tecnologias Utilizadas
 
-- HTML5 Semântico
-- CSS3 (Flexbox, Grid, Variáveis CSS, Animações Keyframes)
-- JavaScript (Geração de partículas/estrelas e manipulação de Modal)
-- Lucide Icons (Ícones leves e modernos)
-- Google Fonts (Oswald para títulos, Inter para corpo)
+- **Estrutura**: HTML5 Semântico.
+- **Estilo**: CSS3 (Variáveis CSS, Flexbox, Grid, Keyframes, Media Queries).
+- **Lógica**: JavaScript (ES6+) Puro.
+- **Bibliotecas**:
+  - [Lucide Icons](https://lucide.dev/) (Ícones vetoriais leves).
+  - [ScrollReveal](https://scrollrevealjs.org/) (Animações de entrada).
+  - [SweetAlert2](https://sweetalert2.github.io/) (Pop-ups e modais de alerta).
+- **Fontes**: Google Fonts (Oswald & Inter).
+
+## 📂 Estrutura de Arquivos Necessária
+
+Para o correto funcionamento das trocas de tema e modais, a pasta `imagens` deve conter:
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `hero-light.png` | Casal fitness (Modo Claro) |
+| `hero-dark.png` | Homem treinando (Modo Escuro) |
+| `dumbbells.png` | Halteres flutuantes |
+| `woman-ia.png` | Mulher conceito IA |
+| `modal-premium.png` | Rapaz no espelho (Modal Premium) |
+| `modal-normal.png` | Pesos/Equipamentos (Modal Normal) |
+| `modal-login.jpg` | Mulher treinando costas (Login) |
 
 ## 👥 Créditos e Equipe de Desenvolvimento
 
-Este projeto está sendo construído sobre a estrutura desenvolvida pelo time abaixo:
+Projeto original idealizado pelo time abaixo, com **refatoração e implementação "Galaxy v2.0"** focada em Front-end dinâmico.
 
 | Dev / Designer | Função | GitHub |
 |----------------|--------|--------|
-| Ana Luiza | Front-end | @analuizanovaes |
-| Vitor Sousa | Banco de Dados | @vitorguinomio |
-| Rayane Sousa | UI/UX Design | @raysousa-prog |
-| Calebe Ferreira | Back-end | @SpellmanKing |
-
-### 💡 Edição Visual e Implementação de Efeitos (Galaxy Theme) por:
-**Ana Luiza Fernandes Novaes**
+| **Ana Luiza** | **Front-end** | **[@analuizanovaes](https://github.com/analuizanovaes)** |
+| Vitor Sousa | Banco de Dados | [@vitorguinomio](https://github.com/vitorguinomio) |
+| Rayane Sousa | UI/UX Design | [@raysousa-prog](https://github.com/raysousa-prog) |
+| Calebe Ferreira | Back-end | [@SpellmanKing](https://github.com/SpellmanKing) |
 
 ## 🚀 Como Executar
 
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/StarFit.git
-```
-
-2. Abra o arquivo `index.html` em seu navegador preferido.
-
-Aproveite a viagem espacial! 🌠
-
-## 🎨 Paleta de Cores
-
-- **Fundo Principal**: `#09090b` (Zinc 950)
-- **Destaque Premium**: `#eab308` (Yellow 500)
-- **Destaque Normal**: `#9333ea` (Purple 600)
-- **Texto Muted**: `#a1a1aa` (Zinc 400)
-
----
-
-<div align="center">
-  <sub>Desenvolvido com 💜 e poeira estelar.</sub>
-</div>
+git clone [https://github.com/analuizanovaes/StarFit.git](https://github.com/analuizanovaes/StarFit.git)
