@@ -296,7 +296,7 @@ button {
     color: var(--text-title);
 }
 
-/* --- HERO SECTION (AGORA COM CAIXA BRANCA/PRETA) --- */
+/* Hero */
 .hero {
     margin-top: 80px;
     min-height: 85vh;
@@ -326,23 +326,18 @@ button {
     perspective: 1000px;
 }
 
-/* Container da Imagem agora é um CARD */
 .hero-image-container {
     position: relative;
     display: inline-block;
     transition: transform 0.5s ease;
     transform-style: preserve-3d;
-
-    /* Estilo de Card adicionado */
     background: var(--bg-card);
     border-radius: 30px;
     border: 1px solid var(--nav-border);
     box-shadow: var(--card-shadow);
     overflow: hidden;
-    /* Corta a imagem nas bordas */
 }
 
-/* Fundo do card no modo escuro */
 [data-theme="dark"] .hero-image-container {
     background: #18181b;
     border-color: #333;
@@ -352,7 +347,6 @@ button {
     transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
 }
 
-/* Imagem limpa (sem borda ou sombra própria, o container cuida disso) */
 .hero-image {
     max-width: 100%;
     height: auto;
@@ -1096,91 +1090,126 @@ footer {
 
 /* MOBILE */
 @media (max-width: 900px) {
-    .desktop-nav {
-        display: none;
+    /* 1. Esconde o menu desktop */
+    .desktop-nav { 
+        display: none; 
     }
 
-    .hero-container,
-    .discover-grid {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+    /* 2. Ajustes Gerais de Layout */
+    .hero-container, 
+    .discover-grid { 
+        /* Muda para FLEX para empilhar corretamente */
+        display: flex;
+        flex-direction: column; 
+        text-align: center; 
+        gap: 3rem; /* Mais espaço entre os blocos */
+        align-items: center; /* Centraliza tudo */
     }
 
-    .hero h1 {
-        font-size: 2.8rem;
+    .hero h1 { 
+        font-size: 2.5rem; /* Fonte um pouco menor para não quebrar */
     }
 
-    /* Ajuste da Caixa Hero no Mobile */
-    .hero-image-wrapper {
-        width: 100%;
-        margin-top: 20px;
+    /* 3. Hero Image (Casal) */
+    .hero-image-wrapper { 
+        width: 100%; 
+        margin-top: 20px; 
+    }
+    .hero-image-container { 
+        display: block; 
+        margin: 0 auto; 
+        width: 90%; 
+        max-width: 350px; /* Limita o tamanho para não ficar gigante */
     }
 
-    .hero-image-container {
-        display: block;
-        margin: 0 auto;
-        width: 90%;
+    .stat-badge { 
+        left: 50%; 
+        transform: translateX(-50%) translateZ(20px); 
+        bottom: -15px; 
+        width: auto; 
+        white-space: nowrap; 
+        padding: 10px 20px;
     }
 
-    .stat-badge {
-        left: 50%;
-        transform: translateX(-50%) translateZ(20px);
-        bottom: -20px;
-        width: auto;
-        white-space: nowrap;
+    .cta-buttons { 
+        justify-content: center; 
     }
 
-    .cta-buttons {
+    /* 4. CONSERTO DO CARD AMARELO (HALTERES) */
+    .discover-card { 
+        order: -1; /* Joga o card para cima do texto */
+        width: 90%; /* Ocupa 90% da tela */
+        max-width: 320px; /* Tamanho ideal de um story/card */
+        height: auto;
+        padding: 40px 20px; /* Mais respiro interno */
+    }
+
+    .card-star-logo {
+        position: relative; /* Muda para relative no mobile para não bugar */
+        top: 0; left: 0;
+        transform: none;
         justify-content: center;
+        margin-bottom: 20px;
     }
 
-    .discover-card {
-        order: -1;
-        width: 100%;
+    .discover-img {
+        width: 80%; /* Imagem um pouco menor para caber bem */
+        margin-top: 10px; /* Espaço do logo */
+        margin-bottom: 30px; /* Espaço do botão */
+        animation: none; /* Sem animação no celular para não travar */
     }
 
-    .plans-wrapper {
-        flex-direction: column;
-    }
-
-    .ia-highlight {
-        order: 0;
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .team-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Modal Mobile */
-    .auth-box.split-modal {
-        flex-direction: column;
-        max-width: 400px;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-
-    .modal-image-col {
-        height: 150px;
-    }
-
-    .modal-form-col {
-        padding: 20px;
-    }
-
-    .modal-header h2 {
+    .discover-text h2 {
         font-size: 2rem;
+    }
+
+    /* 5. Planos e IA */
+    .plans-wrapper { 
+        flex-direction: column; 
+        gap: 40px;
+    }
+
+    .ia-highlight { 
+        order: 0; 
+        width: 90%; 
+        max-width: 320px; 
+    }
+
+    /* 6. Diferenciais e Footer */
+    .why-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .footer-bottom { 
+        flex-direction: column; 
+        justify-content: center; 
+        gap: 20px;
+    }
+
+    .team-grid { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    /* 7. Modal Mobile */
+    .auth-box.split-modal { 
+        flex-direction: column; 
+        max-width: 90%; 
+        max-height: 85vh; 
+        overflow-y: auto; /* Permite rolar se o celular for pequeno */
+    }
+
+    .modal-image-col { 
+        height: 150px; 
+        min-height: 150px; /* Garante que a imagem apareça */
+    }
+
+    .modal-form-col { 
+        padding: 25px 20px; 
+    }
+
+    .modal-header h2 { 
+        font-size: 1.8rem; 
     }
 }
