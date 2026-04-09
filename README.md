@@ -68,7 +68,7 @@ Projeto original idealizado pelo time abaixo, com **refatoração e implementaç
 |----------------|--------|--------|
 | **Ana Luiza** | **Front-end** | **[@analuizanovaes](https://github.com/analuizanovaes)** |
 | Vitor Sousa | Banco de Dados | [@vitorguinomio](https://github.com/vitorguinomio) |
-| Rayane Sousa | UI/UX Design | [@raysousa-dev](https://github.com/raysousa-prog) |
+| Rayane Sousa | UI/UX Design | [@raysousa-dev](https://github.com/raysousa-dev) |
 | Calebe Ferreira | Back-end | [@SpellmanKing](https://github.com/SpellmanKing) |
 
 ## 🚀 Como Executar
